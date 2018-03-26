@@ -20,7 +20,7 @@ constructor(props){
   onCollapse = (collapsed) => {
     console.log(collapsed);
 
-    
+
     this.setState({ collapsed });
   }
 
@@ -73,7 +73,7 @@ constructor(props){
         </Menu>
       </Sider>
       <Layout className={ this.state.collapsed ? 'margin1' : 'margin'} style={{ height:'100vh' }}>
-        <Header style={{ background: '#fff', padding: 0 ,height:'50px'}} />
+        <Header style={{ background: '#fff', padding: 0 ,height:'50px',margin:'10px 16px 0',borderRight:'solid 1px #ddd',borderBottom:'solid 1px #ddd'}} />
         <Content style={{ margin: '16px 16px 0', overflow: 'initial',height:'100%',background: '#fff',borderRight:'solid 1px #ddd',borderBottom:'solid 1px #ddd' }}>
           <div style={{ padding: 24, textAlign: 'center' }}>
           
