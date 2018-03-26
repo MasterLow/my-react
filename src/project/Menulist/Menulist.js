@@ -67,20 +67,6 @@ class Menulist extends React.Component{
 				this.setState({
 					openKeys: [], 
 				});
-            }else{
-                // var ekey=-1;
-                // for(var i=0;i<menulist.data[this.state.list_i].menuitem.length;i++){
-                //     if( e.key === menulist.data[this.state.list_i].menuitem[i].key ){
-                //         ekey = i;
-                //        break;
-                //     };
-                // };
-                // if(ekey === -1){
-                //     this.setState({
-                //         openKeys: [], 
-                //     });
-                //     console.log(this.state.openKeys);
-                // };
             };  
              
 			    this.setState({ 
