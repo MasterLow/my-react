@@ -37,7 +37,7 @@ constructor(props){
           collapsed={this.state.collapsed}
           onCollapse={this.onCollapse}
           style={{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0,boxShadow:'3px 0px 3px #7A7A7A'}}>
-        <div className="logo1" />
+          <div className="logo1" />
           <Menulist  ref="getSwordButton"/>
       </Sider>
       <Layout className={ this.state.collapsed ? 'margin1' : 'margin'} style={{ height:'100vh' }}>
