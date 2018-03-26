@@ -1,0 +1,17 @@
+@import '~antd/dist/antd.css';
+.logo1 {
+  height: 42px;
+  background: #fff;
+  margin:16px;
+}
+.margin1{
+  margin-left:80px;
+  transition: 0.5s 0s margin-left ease;/*合在一起*/
+}
+.margin{
+  margin-left: 200px;
+  transition: 0.5s 0s margin-left ease;/*合在一起*/
+}
+
+
+
