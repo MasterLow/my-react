@@ -6,9 +6,10 @@ import { createStore } from 'redux'
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import App from './App'
-import  Login from './project/Login/Login'
-import  Homepage from './project/Homepage/Homepage'
-import  Error404 from './project/404/Error'
+import Login from './project/Login/Login'
+import Homepage from './project/Homepage/Homepage'
+import Error404 from './project/404/Error'
+import Menulist from './project/Menulist/Menulist'
 
 import reducer from './reducers/reducer'
 import { Provider } from 'react-redux'

@@ -39,7 +39,6 @@ constructor(props){
   }  
   componentWillUnmount() {
     fun();
-
 }
   messageshow = (e) => {
     message.destroy();

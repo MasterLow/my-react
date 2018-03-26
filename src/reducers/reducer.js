@@ -1,4 +1,4 @@
-export default (state = {ifLoading:false}, action={}) => {
+export default (state = {ifLoading:false,SLIDER_SHOW:false}, action={}) => {
     switch (action.type) {
       case 'LOGIN_CLICK':
       let thelogin={ifthrow : false};
@@ -9,8 +9,8 @@ export default (state = {ifLoading:false}, action={}) => {
             };
          sessionStorage.setItem('ifthrow', JSON.stringify(thelogin));
         return {...state,ifLoading:JSON.parse(sessionStorage.getItem('ifthrow')).ifthrow};
-      case 'ifloading_show':
-        return {...state};
+      case 'SLIDER_SHOW':
+        return {...state,SLIDER_SHOW:action.data.SLIDER_SHOW}; //左侧菜单收缩
       default:
         return state;
     }

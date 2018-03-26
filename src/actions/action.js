@@ -1,4 +1,4 @@
-export const ifloading_show = 'ifloading_show';
+export const SLIDER_SHOW = 'SLIDER_SHOW';
 export const LOGIN_CLICK = 'LOGIN_CLICK';
 
 
@@ -23,9 +23,9 @@ export function LOGINCLICK(index) {
         data:index
     }
 }
-export function ifloadingshow(index) {
+export function SLIDERSHOW(index) {
     return {
-        type: ifloading_show,
-        data:index
+        type: SLIDER_SHOW,
+        data: index
     }
 }
