@@ -19,6 +19,8 @@ constructor(props){
   }  
   onCollapse = (collapsed) => {
     console.log(collapsed);
+
+    
     this.setState({ collapsed });
   }
 
