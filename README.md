@@ -5,12 +5,14 @@ import 'antd/dist/antd.css';
 
 3.添加Icon方法
 
-4.npm install --save-dev react
-npm install --save-dev react-dom
-npm install --save-dev react-router@4
+4.npm install --save-dev react-router
+
 npm install --save-dev react-router-dom
-//太多
+//react-router 4.0
+//react-router 4.0
 
 5.npm install --save react-redux
 
 6.问题： <Menu/>中点击有子项后，再点击无子项；前一项没有收起
+
+7.HomePage内 <Route /> 没用 exact 会找不到路径,使用{this.props.match.path} 获取父级路由路径

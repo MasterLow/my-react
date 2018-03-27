@@ -1,8 +1,28 @@
 @import '~antd/dist/antd.css';
 .logo1 {
-  height: 42px;
-  background: #fff;
-  margin:16px;
+  display:flex;
+  justify-content: center;
+  margin:10px;
+}
+.imgbig{
+  width:80px;
+  height:80px;
+  transition: 0.3s 0s height ease;/*合在一起*/
+  transition: 0.3s 0s width ease;/*合在一起*/
+}
+.imgsmall{
+  width:50px;
+  height:50px;
+  transition: 0.3s 0s height ease;/*合在一起*/
+  transition: 0.3s 0s width ease;/*合在一起*/
+}
+.imgbig:hover{
+  width:85px;
+  height:85px;
+}
+.imgsmall:hover{
+  width:55px;
+  height:55px;
 }
 .margin1{
   margin-left:80px;
@@ -11,6 +31,13 @@
 .margin{
   margin-left: 200px;
   transition: 0.5s 0s margin-left ease;/*合在一起*/
+}
+.IconTypeleft{
+  font-size: 22px;
+  color: #fff;
+}
+.IconTypeleft:hover{
+  font-size: 30px;
 }
 
 

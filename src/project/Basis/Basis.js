@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { Link,withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import  { HistoryLOGIN } from './actions/action'
+import  { HistoryLOGIN } from '../../actions/action'
 import { connect } from 'react-redux'
 import { Icon,Spin,Button,message } from 'antd';
-import Homepage from './project/Homepage/Homepage'
-import {store} from './index.js'
-import './App.css';
+import Homepage from '../Homepage/Homepage'
+import {store} from '../../index.js'
+import './Basis.css';
 
-var fun;
-class App extends Component {
+class Basis extends Component {
 constructor(props){
   super(props)
   this.state = {
@@ -17,13 +16,6 @@ constructor(props){
   }
   }
   componentDidMount() {
-    // console.log(this.props);
-    // if(JSON.parse(sessionStorage.getItem('ifthrow')) && JSON.parse(sessionStorage.getItem('ifthrow')).ifthrow){
-    //   console.log(this.props);
-    // }else{
-    //   let history = this.props.history;
-    //   history.push("/");  //未登入
-    // };
   }  
   componentWillUnmount() {
     
@@ -36,7 +28,7 @@ constructor(props){
   render() {
 
     return (
-          <Homepage/>
+         <div style={{width:'500px',height:'500px',background:'gold'}}>Basis</div>
     );
   }
 }
@@ -56,4 +48,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(App));
+)(withRouter(Basis));

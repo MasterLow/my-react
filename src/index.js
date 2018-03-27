@@ -1,7 +1,7 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch,Redirect } from 'react-router-dom'
 import { createStore } from 'redux'
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
@@ -23,10 +23,10 @@ ReactDOM.render(
   <Provider store={store}>
   <BrowserRouter>
                 <Switch>
-                    <Route exact path="/" component={App}/>
+                    <Route  path="/" component={Homepage}/>
                     <Route exact path="/Login" component={Login}/>
-                    <Route exact path="/Homepage" component={Homepage}/>
-                    <Route exact path="/Error404" component={Error404}/>
+                    <Route  path="/Error404" component={Error404}/>
+                    <Redirect to="/Error404" /> 
                 </Switch>
     </BrowserRouter>
   </Provider>,

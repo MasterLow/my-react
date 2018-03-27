@@ -18,7 +18,7 @@ class Menulist extends React.Component{
 			openKeys2: [],  //保存Menu打开项，用于slidershow再次展开显示
 			selectedKeys:['1'],
             current: '',  //默认选中1
-            list_i:0, //被选中的menulist的index,默认0
+            // list_i:0, //被选中的menulist的index,默认0
  		}
      }
 
@@ -41,14 +41,14 @@ class Menulist extends React.Component{
         }
 		 onOpenChange = (openKeys) => {
              const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
-             for(var i=0;i<menulist.data.length;i++){
-                 if( latestOpenKey === menulist.data[i].key ){
-                    this.setState({
-                        list_i: i, 
-                    });
-                    break;
-                 };
-             };
+            //  for(var i=0;i<menulist.data.length;i++){
+            //      if( latestOpenKey === menulist.data[i].key ){
+            //         this.setState({
+            //             list_i: i, 
+            //         });
+            //         break;
+            //      };
+            //  };
 			 if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
 				 this.setState({ openKeys });
 			 } else {
@@ -63,11 +63,11 @@ class Menulist extends React.Component{
 		 onChildChanged = (e) => {
 			 
 			 if(this.state.current === e.key)return; 
-			 if( !menulist.data[this.state.list_i].menuitem ){    //点击单一菜单收起其他展开菜单
-				this.setState({
-					openKeys: [], 
-				});
-            };  
+			//  if( !menulist.data[this.state.list_i].menuitem ){    //点击单一菜单收起其他展开菜单
+			// 	this.setState({
+			// 		openKeys: [], 
+			// 	});
+            // };  
              
 			    this.setState({ 
                              current: e.key, 
@@ -80,7 +80,6 @@ class Menulist extends React.Component{
      
 	render(){
 		return(
-      <BrowserRouter>  
 			<Menu 
 			theme="dark" 
 			mode="inline"
@@ -105,7 +104,6 @@ class Menulist extends React.Component{
 						))
 					}			
 			</Menu>
-      </BrowserRouter>  
 		)
 	}
 }
