@@ -16,18 +16,18 @@ class Homepage extends Component {
     super(props)
     this.state = {
       collapsed: false,
-      imgSrc: 'http://cdn.duitang.com/uploads/item/201512/16/20151216205356_M2UaS.jpeg'
+      imgSrc: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1099350086,4245843908&fm=27&gp=0.jpg'
     }
   }
   componentDidMount() {
-    if(JSON.parse(sessionStorage.getItem('ifthrow')) && JSON.parse(sessionStorage.getItem('ifthrow')).ifthrow){
-      console.log('88888');
-      console.log(this.props);
-    }else{
-      console.log('6666');
-      let history = this.props.history;
-      history.push("/Login");  //未登入
-    };
+    // if(JSON.parse(sessionStorage.getItem('ifthrow')) && JSON.parse(sessionStorage.getItem('ifthrow')).ifthrow){
+    //   console.log('88888');
+    //   console.log(this.props);
+    // }else{
+    //   console.log('6666');
+    //   let history = this.props.history;
+    //   history.push("/Basis");  //未登入
+    // };
   }
   onCollapse = (collapsed) => {
     this.setState({
@@ -107,7 +107,7 @@ class Homepage extends Component {
           }}>
             <div
               style={{
-              margin: '5px 10px 0',
+              margin: '5px 10px',
               height: '30px',
               textAlign: 'center',
               background: '#fff',
@@ -116,7 +116,7 @@ class Homepage extends Component {
             }}></div>
             <div
               style={{
-              margin: '10px 10px 0',
+              margin: '5px 10px',
               background: '#fff',
               borderRight: 'solid 1px #ddd',
               borderBottom: 'solid 1px #ddd'

@@ -24,7 +24,7 @@ ReactDOM.render(
   <BrowserRouter>
                 <Switch>
                     <Route  path="/" component={Homepage}/>
-                    <Route exact path="/Login" component={Login}/>
+                    <Route exact path="/App/Login" component={Login}/>
                     <Route  path="/Error404" component={Error404}/>
                     <Redirect to="/Error404" /> 
                 </Switch>
