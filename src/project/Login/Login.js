@@ -52,15 +52,6 @@ constructor(props){
       store.dispatch(LOGINCLICK({name:this.refs.name.value,pass:this.refs.pass.value,identifyingcode:this.refs.identifyingcode.value}));
     }, 1000);
   }  
-  input1 = (e) => {
-    
-  }  
-  input2 = (e) => {
-    
-  }  
-  input3 = (e) => {
-    
-  }  
   render() {
    
     return (

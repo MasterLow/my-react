@@ -24,7 +24,6 @@ class Homepage extends Component {
       console.log('88888');
       console.log(this.props);
     }else{
-      console.log('6666');
       let history = this.props.history;
       history.push("/Login");  //未登入
     };
@@ -68,7 +67,7 @@ class Homepage extends Component {
               }}/>
             </div>
           </div>
-          <Menulist ref="getSwordButton"/>
+          <Menulist />
         </Sider>
         <Layout
           className={this.state.collapsed

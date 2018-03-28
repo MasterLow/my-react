@@ -7,9 +7,10 @@ import 'antd/dist/antd.css';
 
 4.npm install --save-dev react-router
 
-npm install --save-dev react-router-dom
+npm install --save-dev react-router-dom 
 //react-router 4.0
 //react-router 4.0
+//参考 https://github.com/liubin915249126/react-study
 
 5.npm install --save react-redux
 

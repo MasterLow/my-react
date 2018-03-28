@@ -17,7 +17,7 @@ class Menulist extends React.Component{
 			openKeys: [],  //默认Menu打开项
 			openKeys2: [],  //保存Menu打开项，用于slidershow再次展开显示
 			selectedKeys:['1'],
-            current: '',  //默认选中1
+            current: '1',  //默认选中1
             // list_i:0, //被选中的menulist的index,默认0
  		}
      }
@@ -34,7 +34,14 @@ class Menulist extends React.Component{
                 });
               };
            })
-		//	console.log(this.state.MenulistKey);
+		let data = JSON.parse(sessionStorage.getItem('selectedKeys'));
+		if(data){
+			this.setState({ 
+						 current: data.selectedKeys, 
+						 selectedKeys: data.selectedKeys,
+						 openKeys: data.openKeys,
+			});
+		};
 	    }
          componentWillUnmount() {
          fun();
@@ -61,14 +68,9 @@ class Menulist extends React.Component{
 			 
 		 }
 		 onChildChanged = (e) => {
-			 
+			let data={openKeys:this.state.openKeys,selectedKeys:[e.key]};
+			sessionStorage.setItem('selectedKeys', JSON.stringify(data)); //保存展开项，用于刷新
 			 if(this.state.current === e.key)return; 
-			//  if( !menulist.data[this.state.list_i].menuitem ){    //点击单一菜单收起其他展开菜单
-			// 	this.setState({
-			// 		openKeys: [], 
-			// 	});
-            // };  
-             
 			    this.setState({ 
                              current: e.key, 
                              selectedKeys: [e.key],
