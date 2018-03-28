@@ -5,7 +5,7 @@ import  { HistoryLOGIN } from '../../actions/action'
 import { connect } from 'react-redux'
 import { Icon,Spin,Button,message } from 'antd';
 import Homepage from '../Homepage/Homepage'
-import {store} from '../../index.js'
+import {store} from '../../App.js'
 import './Basis.css';
 
 class Basis extends Component {

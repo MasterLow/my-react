@@ -1,14 +1,48 @@
-import React, { Component } from 'react';
-import { Link,withRouter } from 'react-router-dom'
-import PropTypes from 'prop-types'
-import  { HistoryLOGIN } from './actions/action'
-import { connect } from 'react-redux'
-import { Icon,Spin,Button,message } from 'antd';
+import React,{Component} from 'react'
+import { Route, Link, Switch, withRouter, HashRouter } from 'react-router-dom';
+import { createStore } from 'redux'
+import {connect} from 'react-redux'
+import Login from './project/Login/Login'
+import Basis from './project/Basis/Basis'
 import Homepage from './project/Homepage/Homepage'
-import {store} from './index.js'
+import Error404 from './project/404/Error'
+import Menulist from './project/Menulist/Menulist'
+import reducer from './reducers/reducer'
+import { Provider } from 'react-redux'
 import './App.css';
+// Store
+export const store = createStore(reducer)
 
-var fun;
+
+const routes =[
+  { path: '/', component: Login, exact:true},
+  { path: '/login', component: Login},
+  { path: '/Homepage', component: Homepage,routes:[
+      { path: '/Homepage', component: Basis, exact:true},
+      // { path: '/main/home', component: Home},
+      { path: '/Homepage/Error404', component: Error404},
+  ]}
+]
+
+const RouteWithSubRoutes = (route) => (
+  route.exact?<Route path={route.path} exact render={props => (
+      <route.component {...props} routes={route.routes}>
+          <Switch>
+          {route.routes&&route.routes.map((route,i)=>{
+              return <RouteWithSubRoutes key={i} {...route} />
+          })}
+          </Switch>
+      </route.component>    
+  )} />:<Route path={route.path} render={props => (
+      <route.component {...props} routes={route.routes}>
+         <Switch>
+          {route.routes&&route.routes.map((route,i)=>{
+              return <RouteWithSubRoutes key={i} {...route} />
+          })}
+        </Switch> 
+      </route.component>    
+  )} />
+)
 class App extends Component {
 constructor(props){
   super(props)
@@ -17,43 +51,26 @@ constructor(props){
   }
   }
   componentDidMount() {
-    // console.log(this.props);
-    // if(JSON.parse(sessionStorage.getItem('ifthrow')) && JSON.parse(sessionStorage.getItem('ifthrow')).ifthrow){
-    //   console.log(this.props);
-    // }else{
-    //   let history = this.props.history;
-    //   history.push("/");  //未登入
-    // };
   }  
   componentWillUnmount() {
     
 
 }
-
-  sure = (e) => {
-      
-  }  
   render() {
 
     return (
-          <Homepage/>
+      <Provider store={store}>
+            <HashRouter>
+                <Switch>
+                {routes.map((route,i)=>{
+                    return <RouteWithSubRoutes key={i} {...route} />
+                })}
+                </Switch>
+            </HashRouter>
+      </Provider>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-  }
-}
 
-// Map Redux actions to component props
-function mapDispatchToProps(dispatch) {
-  return {
-    
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withRouter(App));
+export default App;

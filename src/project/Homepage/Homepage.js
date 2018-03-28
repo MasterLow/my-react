@@ -1,11 +1,11 @@
 
 import React, {Component} from 'react';
-import {BrowserRouter, Route, Switch,Redirect} from 'react-router-dom'
+import { Route, Link, Switch, withRouter, HashRouter } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import {SLIDERSHOW} from '../../actions/action'
 import {connect} from 'react-redux'
 import {Layout, Menu, Icon} from 'antd';
-import {store} from '../../index.js'
+import {store} from '../../App.js'
 import Menulist from '../Menulist/Menulist'
 import Error404 from '../404/Error'
 import Basis from '../Basis/Basis'
@@ -20,14 +20,14 @@ class Homepage extends Component {
     }
   }
   componentDidMount() {
-    // if(JSON.parse(sessionStorage.getItem('ifthrow')) && JSON.parse(sessionStorage.getItem('ifthrow')).ifthrow){
-    //   console.log('88888');
-    //   console.log(this.props);
-    // }else{
-    //   console.log('6666');
-    //   let history = this.props.history;
-    //   history.push("/Basis");  //未登入
-    // };
+    if(JSON.parse(sessionStorage.getItem('ifthrow')) && JSON.parse(sessionStorage.getItem('ifthrow')).ifthrow){
+      console.log('88888');
+      console.log(this.props);
+    }else{
+      console.log('6666');
+      let history = this.props.history;
+      history.push("/Login");  //未登入
+    };
   }
   onCollapse = (collapsed) => {
     this.setState({
@@ -122,10 +122,7 @@ class Homepage extends Component {
               borderBottom: 'solid 1px #ddd'
             }}>
 
-              <Switch>
-                <Route exact path={this.props.match.path} component={Basis}/>
-                <Route exact path={`${this.props.match.path}:Basis`} component={Error404}/>
-              </Switch>
+            {this.props.children}
 
             </div>
           </Content>
@@ -155,4 +152,4 @@ function mapDispatchToProps(dispatch) {
   return {}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Homepage);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Homepage));

@@ -13,11 +13,8 @@ body{
     top:0;
     left:0;
     background-color: bisque;
-}
-.imgDiv{
-    width:100%;
-    height:100%;
     background-image: url('./../../images/background.jpg');
+    background-size:100%;
     background-repeat:no-repeat：
 }
 .FormDiv{

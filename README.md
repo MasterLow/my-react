@@ -16,3 +16,6 @@ npm install --save-dev react-router-dom
 6.问题： <Menu/>中点击有子项后，再点击无子项；前一项没有收起
 
 7.HomePage内 <Route /> 没用 exact 会找不到路径,使用{this.props.match.path} 获取父级路由路径
+
+8.react-router 提供了一个withRouter组件 
+withRouter可以包装任何自定义组件，将react-router 的 history,location,match 三个对象传入。

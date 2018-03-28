@@ -2,7 +2,7 @@ import React from 'react'
 import { Menu,Icon, Button } from 'antd';
 import { BrowserRouter, Route, Switch,Link } from 'react-router-dom'
 import { menulist } from '../../content/content';
-import {store} from '../../index.js'
+import {store} from '../../App.js'
 import './Menulist.css';
 const SubMenu = Menu.SubMenu;
 let rootSubmenuKeys = menulist.rootSubmenuKeys;

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import  { LOGINCLICK } from '../../actions/action'
 import { connect } from 'react-redux'
 import { Icon,Spin,Button,message } from 'antd';
-import {store} from '../../index.js'
+import {store} from '../../App.js'
 import './Login.css';
 var fun;
 class Login extends Component {
@@ -66,7 +66,6 @@ constructor(props){
     return (
       <div  className='bodyDiv'>
            <div className='ADiv'>
-              <img className="imgDiv"/>
            </div>
         <div>
            <form className='FormDiv'>

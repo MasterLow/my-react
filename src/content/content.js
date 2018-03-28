@@ -70,14 +70,14 @@
 //                         },],
 //                         rootSubmenuKeys : ['sub1', 'sub2', 'sub3','sub4', 'sub5', 'sub6','sub7', 'sub8', 'sub9','sub10', 'sub11', 'sub12','sub13', 'sub14',]};
 export const menulist = {data:[{
-    key:'1',type:'user',link:'/',title:'首页'
+    key:'1',type:'user',link:'/Homepage',title:'首页'
                         },
                         {
     key:'sub1',type:'user',link:'',title:'你',
     menuitem : [{
-        key:'2',type:'user',link:'/Basis',title:'就'
+        key:'2',type:'user',link:'/Homepage/Error404',title:'就'
                             },{
-        key:'3',type:'user',link:'/apps/2',title:'是'
+        key:'3',type:'user',link:'/Login',title:'是'
                             },{
         key:'4',type:'user',link:'/apps/3',title:'逗'
                             },{
