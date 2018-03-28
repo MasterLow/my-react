@@ -61,17 +61,17 @@ constructor(props){
         <div>
            <form className='FormDiv'>
                <div style={{display:'flex',flexDirection:'column'}}>
-                  <div style={{display:'flex',flexDirection:'row',margin:'10px'}}>
+                  <div className='divinput'>
                    <input ref="name" type="text" placeholder='用户名' className="inputDiv"/>
-                   <div className='leftDiv' style={{width:'40px',height:'40px',backgroundColor:'#fff',borderLeft:'solid 1px #ddd'}}><Icon type="user" style={{fontSize:'16px'}}/></div>
+                   <div className='leftDiv'><Icon type="user" style={{fontSize:'16px', color: '#08c'}}/></div>
                   </div>
-                  <div style={{display:'flex',flexDirection:'row',margin:'10px'}}>
+                  <div className='divinput'>
                    <input ref="pass" type="password" placeholder='密码' className="inputDiv"/>
-                   <div  className='leftDiv' style={{width:'40px',height:'40px',backgroundColor:'#fff',borderLeft:'solid 1px #ddd'}}><Icon type="unlock" style={{fontSize:'16px'}}/></div>
+                   <div  className='leftDiv'><Icon type="unlock" style={{fontSize:'16px', color: '#08c'}}/></div>
                   </div>
-                  <div style={{display:'flex',flexDirection:'row',margin:'10px'}}>
+                  <div className='divinput'>
                    <input ref="identifyingcode" type="text" placeholder='验证码' className="inputDiv"/>
-                   <div  className='leftDiv' style={{width:'40px',height:'40px',backgroundColor:'#fff',borderLeft:'solid 1px #ddd'}}><Icon type="unlock" style={{fontSize:'16px'}}/></div>
+                   <div  className='leftDiv'><Icon type="unlock" style={{fontSize:'16px', color: '#08c'}}/></div>
                   </div>
                   <Button type="primary" style={{width:'290px',height:'40px',margin:'10px'}}  onClick={this.sure}>登 入</Button>
                </div>
