@@ -14,26 +14,36 @@ class Menulist extends React.Component{
  		this.state = {
 			openKeys: '',  //默认Menu打开项
 			selectedKeys:'',
+			MenuShow:false,
  		}
      }
 
 		 componentDidMount() {
 			this.setMenuOpen(this.props);
-            fun = store.subscribe(()=>{          //监听slidershow收缩
-              if(!store.getState().SLIDER_SHOW){
+						fun = store.subscribe(()=>{          //监听slidershow收缩
+							console.log(store.getState().SLIDER_SHOW);
+              if(store.getState().SLIDER_SHOW){
                this.setState({
-                   openKeys: '', 
+								openKeys: '', 
+								MenuShow: true, 
                });
               }else{
-				this.setMenuOpen(this.props);
+								this.setState({
+								 MenuShow: false, 
+								});
+			//	this.setMenuOpen(this.props);
               };
            })
 	    }
          componentWillUnmount() {
          fun();
         }
-		componentWillReceiveProps(nextProps) {
-			console.log(nextProps);
+		componentWillReceiveProps(nextProps) {   
+			setTimeout(() => {
+				if(!this.state.MenuShow){        //componentDidMount内的监听和componentWillReceiveProps同步，当MenuShow被赋新值，这边获取的还是赋值前的值，所以还是false,给了延迟消除
+					this.setMenuOpen(nextProps)
+				};
+			}, 100);
 		}
 		 onOpenChange = (data) => {
 			this.setState({
@@ -47,7 +57,6 @@ class Menulist extends React.Component{
 		 }
 		 setMenuOpen = props => {
 			 const { pathname } = props.location;
-			 console.log(pathname);
 			 this.setState({
 				openKeys: pathname.substr(0, pathname.lastIndexOf('/')),
 				selectedKeys: pathname
@@ -58,11 +67,11 @@ class Menulist extends React.Component{
 		return(
 			<Menu 
 			theme="dark" 
-			mode="inline"
+			mode='inline'
 			onClick = {this.onChildChanged}
 			onOpenChange = {this.onOpenChange}
-			selectedKeys={[this.state.selectedKeys]}
-			openKeys = {[this.state.openKeys]}>
+			openKeys={[this.state.openKeys]}
+			selectedKeys={[this.state.selectedKeys]}>
 			{
 				menulist.data.map((item,index) => (
 					!item.menuitem ? <Menu.Item style={{borderTop:'solid 3px #000C17'}} key={item.key}><Link to={item.link}><Icon type={item.type} /><span>{item.title}</span></Link></Menu.Item> :
@@ -95,7 +104,4 @@ function mapDispatchToProps(dispatch) {
     
   }
 }
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-  )(withRouter(Menulist));
+export default withRouter(Menulist);

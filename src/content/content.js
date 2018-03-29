@@ -70,7 +70,7 @@
 //                         },],
 //                         rootSubmenuKeys : ['sub1', 'sub2', 'sub3','sub4', 'sub5', 'sub6','sub7', 'sub8', 'sub9','sub10', 'sub11', 'sub12','sub13', 'sub14',]};
 export const menulist = {data:[{
-    key:'a',type:'user',link:'a',title:'首页'
+    key:'/Homepage',type:'user',link:'/Homepage',title:'首页'
                         },
                         {
     key:'/Homepage/page2',type:'user',link:'',title:'第一',

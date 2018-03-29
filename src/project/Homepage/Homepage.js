@@ -29,12 +29,11 @@ class Homepage extends Component {
   }
   onCollapse = () => {
     this.setState({
-      collapsed: !this.state.collapsed
+      collapsed: !this.state.collapsed   //异步
     });
-    store.dispatch(SLIDERSHOW({SLIDER_SHOW: this.state.collapsed}));
+    store.dispatch(SLIDERSHOW({SLIDER_SHOW: !this.state.collapsed})); //和上面一同，得到的SLIDER_SHOW = this.state.collapsed
   }
 
-  sure = (e) => {}
   render() {
 
     return (
@@ -63,7 +62,7 @@ class Homepage extends Component {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
-                border: 'solid 2px #08c'
+                border: 'solid 2px #eee'
               }}/>
             </div>
           </div>
