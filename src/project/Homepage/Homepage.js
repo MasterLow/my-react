@@ -21,14 +21,13 @@ class Homepage extends Component {
   }
   componentDidMount() {
     if(JSON.parse(sessionStorage.getItem('ifthrow')) && JSON.parse(sessionStorage.getItem('ifthrow')).ifthrow){
-      console.log('88888');
-      console.log(this.props);
+      
     }else{
       let history = this.props.history;
       history.push("/Login");  //未登入
     };
   }
-  onCollapse = (collapsed) => {
+  onCollapse = () => {
     this.setState({
       collapsed: !this.state.collapsed
     });
@@ -43,14 +42,15 @@ class Homepage extends Component {
         <Sider
           theme="dark"
           mode="inline"
+          trigger={null}
+          collapsible
           collapsed={this.state.collapsed}
-          onCollapse={this.onCollapse}
           style={{
           overflow: 'auto',
           height: '100vh',
           position: 'fixed',
           left: 0,
-          boxShadow: '3px 0px 3px #7A7A7A'
+          boxShadow: '3px 0px 3px #9F9F9F'
         }}>
           <div className="logo1">
             <div
@@ -82,10 +82,11 @@ class Homepage extends Component {
             padding: 0,
             height: '50px',
             margin: '5px 10px 0',
-            borderRight: 'solid 1px #ddd',
-            borderBottom: 'solid 1px #ddd',
             display: 'flex',
-            flexDirection: 'row'
+            flexDirection: 'row',
+            borderLeft: 'solid 1px #ddd',
+            borderTop: 'solid 1px #ddd',
+            boxShadow: '2px 2px 2px #9F9F9F'
           }}>
             <div
               style={{
@@ -110,15 +111,18 @@ class Homepage extends Component {
               height: '30px',
               textAlign: 'center',
               background: '#fff',
-              borderRight: 'solid 1px #ddd',
-              borderBottom: 'solid 1px #ddd'
+              borderLeft: 'solid 1px #ddd',
+              borderTop: 'solid 1px #ddd',
+              boxShadow: '2px 2px 2px #9F9F9F'
             }}></div>
             <div
               style={{
+              padding:'6px',
               margin: '5px 10px',
               background: '#fff',
-              borderRight: 'solid 1px #ddd',
-              borderBottom: 'solid 1px #ddd'
+              borderLeft: 'solid 1px #ddd',
+              borderTop: 'solid 1px #ddd',
+              boxShadow: '2px 2px 2px #9F9F9F'
             }}>
 
             {this.props.children}
@@ -131,8 +135,9 @@ class Homepage extends Component {
             textAlign: 'center',
             padding: 0,
             lineHeight: '50px',
-            borderRight: 'solid 1px #ddd',
-            borderBottom: 'solid 1px #ddd',
+            borderLeft: 'solid 1px #ddd',
+            borderTop: 'solid 1px #ddd',
+            boxShadow: '2px 2px 2px #9F9F9F',
             margin: '5px 10px'
           }}>
             OOOXXXX OOOO XXXXX

@@ -70,73 +70,41 @@
 //                         },],
 //                         rootSubmenuKeys : ['sub1', 'sub2', 'sub3','sub4', 'sub5', 'sub6','sub7', 'sub8', 'sub9','sub10', 'sub11', 'sub12','sub13', 'sub14',]};
 export const menulist = {data:[{
-    key:'1',type:'user',link:'/Homepage',title:'首页'
+    key:'a',type:'user',link:'a',title:'首页'
                         },
                         {
-    key:'sub1',type:'user',link:'',title:'你',
+    key:'/Homepage/page2',type:'user',link:'',title:'第一',
     menuitem : [{
-        key:'2',type:'user',link:'/Homepage/Error404',title:'就'
+        key:'/Homepage/page2/1',type:'user',link:'/Homepage/page2/1',title:'一'
                             },{
-        key:'3',type:'user',link:'/Login',title:'是'
-                            },{
-        key:'4',type:'user',link:'/apps/3',title:'逗'
-                            },{
-        key:'5',type:'user',link:'/apps/4',title:'逼'
-                            },{
-        key:'6',type:'user',link:'/apps/5',title:'万'
-                            },{
-        key:'7',type:'user',link:'/apps/6',title:'丈'
-                            },{
-        key:'8',type:'user',link:'/apps/7',title:'红'
-                            },{
-        key:'9',type:'user',link:'/apps/8',title:'尘'
-                            },{
-        key:'10',type:'user',link:'/apps/9',title:'一'
-                            },{
-        key:'11',type:'user',link:'/apps/10',title:'杯'
-                            },{
-        key:'12',type:'user',link:'/apps/11',title:'酒'
+        key:'/Homepage/page2/2',type:'user',link:'/Homepage/page2/2',title:'二'
+                            }]
+                        },
+                        {
+    key:'/Homepage/page3',type:'user',link:'',title:'第二',
+    menuitem : [{
+        key:'/Homepage/page3/1',type:'user',link:'/Homepage/page3/1',title:'一'
                             },]
                         },
                         {
-    key:'sub2',type:'user',link:'',title:'千',
+    key:'/Homepage/page4',type:'user',link:'',title:'第三',
     menuitem : [{
-        key:'13',type:'user',link:'/apps/13',title:'秋'
-                            },{
-        key:'14',type:'user',link:'/apps/14',title:'大'
-                            },{
-        key:'15',type:'user',link:'/apps/15',title:'业'
-                            },{
-        key:'16',type:'user',link:'/apps/16',title:'一'
-                            }]
+        key:'/Homepage/page4/1',type:'user',link:'/Homepage/page4/1',title:'一'
+                            },]
                         },
                         {
-    key:'sub3',type:'user',link:'',title:'壶',
+    key:'/Homepage/page5',type:'user',link:'',title:'第四',
     menuitem : [{
-        key:'17',type:'user',link:'/apps/17',title:'茶'
-                            },{
-        key:'18',type:'user',link:'/apps/18',title:'low'
-                            },{
-        key:'19',type:'user',link:'/apps/19',title:'是'
-                            },{
-        key:'20',type:'user',link:'/apps/20',title:'不'
-                            },{
-        key:'21',type:'user',link:'/apps/21',title:'可'
-                            },{
-        key:'22',type:'user',link:'/apps/22',title:'能'
-                            },{
-        key:'23',type:'user',link:'/apps/23',title:'的'
-                            }]
+        key:'/Homepage/page5/1',type:'user',link:'/Homepage/page5/1',title:'一'
+                            },]
                         },
                         {
-    key:'sub4',type:'user',link:'',title:'了',
+    key:'/Homepage/page6',type:'user',link:'',title:'第五',
     menuitem : [{
-        key:'24',type:'user',link:'/apps/24',title:'是'
-                            },{
-        key:'25',type:'user',link:'/apps/25',title:'不'
-                            }]
+        key:'/Homepage/page6/1',type:'user',link:'/Homepage/page6/1',title:'一'
+                            },]
                         },
                         {
-    key:'sub5',type:'code-o',link:'',title:'LOW',
+    key:'/Homepage/page7/1',type:'code-o',link:'/Homepage/page7/1',title:'第六',
                         },],
-                        rootSubmenuKeys : ['sub1', 'sub2', 'sub3','sub4', 'sub5', 'sub6','sub7', 'sub8', 'sub9','sub10', 'sub11', 'sub12','sub13', 'sub14',]};
+                    };
