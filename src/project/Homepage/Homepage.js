@@ -130,14 +130,15 @@ class Homepage extends Component {
           </Content>
           <Footer
             style={{
-            background: '#fff',
+            background: '#272526',
             textAlign: 'center',
             padding: 0,
             lineHeight: '50px',
             borderLeft: 'solid 1px #ddd',
             borderTop: 'solid 1px #ddd',
             boxShadow: '2px 2px 2px #9F9F9F',
-            margin: '5px 10px'
+            margin: '5px 10px',
+            color:'#fff'
           }}>
             OOOXXXX OOOO XXXXX
           </Footer>

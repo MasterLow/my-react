@@ -105,6 +105,9 @@ export const menulist = {data:[{
                             },]
                         },
                         {
-    key:'/Homepage/page7/1',type:'code-o',link:'/Homepage/page7/1',title:'第六',
+    key:'/Homepage/page7/1',type:'code-o',link:'/Homepage/page7/1',title:'error',
+                        },
+                        {
+    key:'/Homepage/page8/1',type:'code-o',link:'/Homepage/page8/1',title:'登入',
                         },],
                     };

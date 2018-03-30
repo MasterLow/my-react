@@ -25,10 +25,8 @@ constructor(props){
   }  
   render() {
     return (
-      <div  style={{width:'500px',height:'500px',background:'gold'}}>
+      <div  style={{width:'100%',background:'#272526',color:'#fff'}}>
             page1
-
-            {this.props.children}
             
       </div>
     );

@@ -31,7 +31,7 @@ constructor(props){
           
             
             <div className="errorinfo">
-                { !this.state.ifback ? <Button type="primary" onClick={this.back}>B a c k</Button> : <Redirect push to="/" /> }		
+                {/* {  <Button type="primary" onClick={this.back}>B a c k</Button>  }		 */}
             </div>
             <div className="miscbox">
               <div className="tower"></div>

@@ -34,6 +34,7 @@ const routes =[
       { path: '/Homepage/page5/1', component: Homepage6},
       { path: '/Homepage/page6/1', component: Homepage7},
       { path: '/Homepage/page7/1', component: Error404},
+      { path: '/Homepage/page8/1', component: Login},
   ]},
 //   { path: '/Homepage1/page1', component: Homepage,routes:[
 //       { path: '/Homepage1/page1', component: Homepage2, exact:true},
