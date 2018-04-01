@@ -21,7 +21,6 @@ class Menulist extends React.Component{
 		 componentDidMount() {
 			this.setMenuOpen(this.props);
 						fun = store.subscribe(()=>{          //监听slidershow收缩
-							console.log(store.getState().SLIDER_SHOW);
               if(store.getState().SLIDER_SHOW){
                this.setState({
 								openKeys: '', 

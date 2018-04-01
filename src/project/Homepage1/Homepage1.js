@@ -3,8 +3,9 @@ import { Link,withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import  { HistoryLOGIN } from '../../actions/action'
 import { connect } from 'react-redux'
-import { Icon,Spin,Button,message, Row, Col, Card, Switch } from 'antd';
+import { Icon,Spin,Button,message, Row, Col, Card, Switch,Breadcrumb } from 'antd';
 import Homepage from '../Homepage/Homepage'
+import { menulist } from '../../content/content';
 import {store} from '../../App.js'
 import './Homepage1.css';
 
@@ -15,6 +16,8 @@ constructor(props){
   }
   }
   componentDidMount() {
+
+    
   }  
   componentWillUnmount() {
     
@@ -25,9 +28,12 @@ constructor(props){
   }  
   render() {
     return (
-      <div  style={{width:'100%',background:'#272526',color:'#fff'}}>
-            page1
-            
+      <div  style={{width:'100%',color:'#fff'}}>
+      
+
+
+
+      
       </div>
     );
   }

@@ -4,7 +4,7 @@ import { Route, Link, Switch, withRouter, HashRouter } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import {SLIDERSHOW} from '../../actions/action'
 import {connect} from 'react-redux'
-import {Layout, Menu, Icon} from 'antd';
+import {Layout, Menu, Icon,Breadcrumb} from 'antd';
 import {store} from '../../App.js'
 import Menulist from '../Menulist/Menulist'
 import Error404 from '../404/Error'
@@ -26,6 +26,10 @@ class Homepage extends Component {
       let history = this.props.history;
       history.push("/Login");  //未登入
     };
+  }
+  componentWillReceiveProps(nextProps) {  
+    // const { pathname } = nextProps.location;
+    // console.log(pathname.split('/').filter(i => i));
   }
   onCollapse = () => {
     this.setState({
@@ -80,7 +84,7 @@ class Homepage extends Component {
             backgroundImage: 'linear-gradient(to left,#4568DC,#B06AB3)',
             padding: 0,
             height: '50px',
-            margin: '5px 10px 0',
+            margin: '3px 3px 0',
             display: 'flex',
             flexDirection: 'row',
             borderLeft: 'solid 1px #ddd',
@@ -106,18 +110,23 @@ class Homepage extends Component {
           }}>
             <div
               style={{
-              margin: '5px 10px',
-              height: '30px',
-              textAlign: 'center',
-              background: '#fff',
+              margin: '3px 3px',
+              padding:'5px',
               borderLeft: 'solid 1px #ddd',
               borderTop: 'solid 1px #ddd',
               boxShadow: '2px 2px 2px #9F9F9F'
-            }}></div>
+            }}>
+            <Breadcrumb>
+              <Breadcrumb.Item href="">
+                <Icon type="home" style={{fontSize:'16px'}}/>
+                <span  style={{fontSize:'14px'}}>首页</span>
+              </Breadcrumb.Item>
+            </Breadcrumb>
+            </div>
             <div
               style={{
               padding:'6px',
-              margin: '5px 10px',
+              margin: '3px 3px',
               background: '#fff',
               borderLeft: 'solid 1px #ddd',
               borderTop: 'solid 1px #ddd',
@@ -137,7 +146,7 @@ class Homepage extends Component {
             borderLeft: 'solid 1px #ddd',
             borderTop: 'solid 1px #ddd',
             boxShadow: '2px 2px 2px #9F9F9F',
-            margin: '5px 10px',
+            margin: '3px 3px',
             color:'#fff'
           }}>
             OOOXXXX OOOO XXXXX
