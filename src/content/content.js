@@ -110,4 +110,19 @@ export const menulist = {data:[{
                         {
     key:'/Homepage/page8/1',type:'code-o',link:'/Homepage/page8/1',title:'登入',
                         },],
+                        Width: document.body.clientWidth,  
+                        Height: document.body.clientHeight,   
                     };
+
+//具体导航的名称  
+export const breadcrumbNameMap = {  
+    '/Homepage': '首页',  
+    '/Homepage/page2/1': '第一 > 一',  
+    '/Homepage/page2/2': '第一 > 二',  
+    '/Homepage/page3/1': '第二 > 一', 
+    '/Homepage/page4/1': '第三 > 一',  
+    '/Homepage/page5/1': '第四 > 一',  
+    '/Homepage/page6/1': '第五 > 一',  
+    '/Homepage/page7/1': 'error',  
+    '/Homepage/page8/1': '登入',  
+}; 

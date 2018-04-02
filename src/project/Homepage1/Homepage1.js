@@ -5,7 +5,6 @@ import  { HistoryLOGIN } from '../../actions/action'
 import { connect } from 'react-redux'
 import { Icon,Spin,Button,message, Row, Col, Card, Switch,Breadcrumb } from 'antd';
 import Homepage from '../Homepage/Homepage'
-import { menulist } from '../../content/content';
 import {store} from '../../App.js'
 import './Homepage1.css';
 
@@ -13,6 +12,7 @@ class Homepage1 extends Component {
 constructor(props){
   super(props)
   this.state = {
+    
   }
   }
   componentDidMount() {
@@ -28,11 +28,8 @@ constructor(props){
   }  
   render() {
     return (
-      <div  style={{width:'100%',color:'#fff'}}>
+      <div style={{}}>
       
-
-
-
       
       </div>
     );

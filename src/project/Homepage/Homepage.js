@@ -4,9 +4,11 @@ import { Route, Link, Switch, withRouter, HashRouter } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import {SLIDERSHOW} from '../../actions/action'
 import {connect} from 'react-redux'
-import {Layout, Menu, Icon,Breadcrumb} from 'antd';
+import {Layout, Menu, Icon} from 'antd';
 import {store} from '../../App.js'
 import Menulist from '../Menulist/Menulist'
+import { menulist } from '../../content/content';
+import BreadcrumbCustom from '../BreadcrumbCustom/BreadcrumbCustom'
 import Error404 from '../404/Error'
 import Basis from '../Basis/Basis'
 import './Homepage.css';
@@ -53,13 +55,10 @@ class Homepage extends Component {
           height: '100vh',
           position: 'fixed',
           left: 0,
-          boxShadow: '3px 0px 3px #9F9F9F'
         }}>
           <div className="logo1">
             <div
-              className={!this.state.collapsed
-              ? 'imgbig'
-              : 'imgsmall'}>
+              className='imgsmall'>
               <img
                 src={this.state.imgSrc}
                 style={{
@@ -84,14 +83,32 @@ class Homepage extends Component {
             backgroundImage: 'linear-gradient(to left,#4568DC,#B06AB3)',
             padding: 0,
             height: '50px',
-            margin: '3px 3px 0',
             display: 'flex',
             flexDirection: 'row',
-            borderLeft: 'solid 1px #ddd',
-            borderTop: 'solid 1px #ddd',
-            boxShadow: '2px 2px 2px #9F9F9F'
+            justifyContent:'space-between',
+            alignItems: 'center'
           }}>
+          <div>
             <div
+          style={{
+          width: '50px',
+          height: '50px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}><Icon
+          type={!this.state.collapsed
+    ? 'menu-fold'
+    : 'menu-unfold'}
+          onClick={this.onCollapse}
+          className='IconTypeleft'/>
+            </div>
+          </div>
+
+              <div style={{fontSize:'20px',color:'#fff'}}>OOOO OOOO OOOO OOOO</div>
+
+              <div>
+                <div
               style={{
               width: '50px',
               height: '50px',
@@ -102,35 +119,28 @@ class Homepage extends Component {
               type={!this.state.collapsed
         ? 'menu-fold'
         : 'menu-unfold'}
-              onClick={this.onCollapse}
-              className='IconTypeleft'/></div>
+              className='IconTypeleft'/>
+                </div>
+              </div>
           </Header>
           <Content style={{
             overflow: 'initial'
           }}>
             <div
               style={{
-              margin: '3px 3px',
-              padding:'5px',
-              borderLeft: 'solid 1px #ddd',
-              borderTop: 'solid 1px #ddd',
-              boxShadow: '2px 2px 2px #9F9F9F'
+              height:'30px',
+              display:'flex',
+              flexDirection:'row',
+              alignItems:'center'
             }}>
-            <Breadcrumb>
-              <Breadcrumb.Item href="">
-                <Icon type="home" style={{fontSize:'16px'}}/>
-                <span  style={{fontSize:'14px'}}>首页</span>
-              </Breadcrumb.Item>
-            </Breadcrumb>
+            <Icon type='home' style={{fontSize:'16px',paddingLeft:'10px',paddingRight:'5px'}}/>
+            <BreadcrumbCustom />
             </div>
             <div
               style={{
-              padding:'6px',
-              margin: '3px 3px',
+              margin:'0 10px 10px 10px',
               background: '#fff',
-              borderLeft: 'solid 1px #ddd',
-              borderTop: 'solid 1px #ddd',
-              boxShadow: '2px 2px 2px #9F9F9F'
+              minHeight:menulist.Height-140+'px'
             }}>
 
             {this.props.children}
@@ -143,10 +153,6 @@ class Homepage extends Component {
             textAlign: 'center',
             padding: 0,
             lineHeight: '50px',
-            borderLeft: 'solid 1px #ddd',
-            borderTop: 'solid 1px #ddd',
-            boxShadow: '2px 2px 2px #9F9F9F',
-            margin: '3px 3px',
             color:'#fff'
           }}>
             OOOXXXX OOOO XXXXX
