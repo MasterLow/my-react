@@ -45,8 +45,6 @@ class Homepage extends Component {
     return (
       <Layout>
         <Sider
-          theme="dark"
-          mode="inline"
           trigger={null}
           collapsible
           collapsed={this.state.collapsed}

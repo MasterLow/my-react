@@ -17,7 +17,7 @@
 }
 .margin{
   margin-left: 200px;
-  transition: 0.5s 0s margin-left ease;/*合在一起*/
+  transition: 0.2s 0s margin-left ease;/*合在一起*/
 }
 .IconTypeleft{
   font-size: 22px;
