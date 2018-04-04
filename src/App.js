@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React,{Component} from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
 import { createStore } from 'redux'
 import Login from './project/Login/Login'
