@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Breadcrumb } from 'antd';  
 import { Link,withRouter } from 'react-router-dom';  
-import { breadcrumbNameMap } from '../../content/content';
+import { menulist } from '../../content/content';
 import './BreadcrumbCustom.css';
 class BreadcrumbCustom extends Component {  
     constructor(props) {  
@@ -11,23 +11,22 @@ class BreadcrumbCustom extends Component {
         }  
     }  
     getPath() {  
-         var routeDate = this.props.history.location.pathname.split('/').filter(i => i);
-
+         var routeDate = this.props.history.location.pathname.split('/').filter(i => i)
         this.setState({
             extraBreadcrumbItems: routeDate.map((_, index) => {  
                 const url = `/${routeDate.slice(0, index + 1).join('/')}`;
-            if(index%2 === 0){                   //注意点：由于第二级为展示用，不用于跳转；所以return;
+            if(index === 1){                   //注意点：由于第二级为展示用，不用于跳转；所以有以下空导航;
+                return (  
+                    <Breadcrumb.Item key={url} />   //空导航
+                ); 
+            }else{
                 return (  
                     <Breadcrumb.Item key={url}>  
                         <Link to={url}>  
-                            {breadcrumbNameMap[url]}  
+                            {menulist.breadcrumbNameMap[url]}  
                         </Link>  
                     </Breadcrumb.Item>  
                 );  
-            }else{
-                return (  
-                    <Breadcrumb.Item key={url} />   
-                ); 
             };                         
             })
         });

@@ -4,7 +4,7 @@ import { Route, Link, Switch, withRouter, HashRouter } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import {SLIDERSHOW} from '../../actions/action'
 import {connect} from 'react-redux'
-import {Layout, Menu, Icon} from 'antd';
+import {Layout, Menu, Icon, Dropdown} from 'antd';
 import {store} from '../../App.js'
 import Menulist from '../Menulist/Menulist'
 import { menulist } from '../../content/content';
@@ -67,7 +67,7 @@ class Homepage extends Component {
               }}/>
             </div>
           </div>
-          <Menulist />
+          <Menulist theme='dark' mode='inline' menudata={menulist}/>
         </Sider>
         <Layout
           className={this.state.collapsed
@@ -113,11 +113,14 @@ class Homepage extends Component {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center'
-            }}><Icon
+            }}>
+            <Dropdown overlay={<Menulist menudata={menulist.topmenu}/>}>
+            <Icon
               type={!this.state.collapsed
         ? 'menu-fold'
         : 'menu-unfold'}
               className='IconTypeleft'/>
+            </Dropdown>
                 </div>
               </div>
           </Header>
