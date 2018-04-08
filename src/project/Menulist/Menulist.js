@@ -65,19 +65,19 @@ class Menulist extends React.Component{
 	render(){
 		return(
 			<Menu 
-			theme="dark" 
-			mode='inline'
+			theme={this.props.theme}
+			mode={this.props.mode}
 			onClick = {this.onChildChanged}
 			onOpenChange = {this.onOpenChange}
 			openKeys={[this.state.openKeys]}
 			selectedKeys={[this.state.selectedKeys]}>
 			{
-				menulist.data.map((item,index) => (
-					!item.menuitem ? <Menu.Item style={{borderTop:'solid 3px #000C17'}} key={item.key}><Link to={item.link}><Icon type={item.type} /><span>{item.title}</span></Link></Menu.Item> :
+				this.props.menudata.data.map((item,index) => (
+					!item.menuitem ? <Menu.Item key={item.key}><Link to={item.link}><Icon type={item.type} /><span>{item.title}</span></Link></Menu.Item> :
 				<SubMenu
 				  key={item.key}
 					title={<span><Icon type={item.type} /><span>{item.title}</span></span>}
-					style={{borderTop:'solid 3px #000C17'}}
+					// style={{borderTop:'solid 3px #000C17'}}
 				>
             { 
 						item.menuitem.map((item2,i) => (
