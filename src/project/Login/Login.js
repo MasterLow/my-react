@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import  { LOGINCLICK } from '../../actions/action'
 import { connect } from 'react-redux'
-import { Icon,Spin,Button,message } from 'antd';
+import { Icon,Button,message } from 'antd';
 import {store} from '../../App.js'
 import './Login.css';
 var fun;

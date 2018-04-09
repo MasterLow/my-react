@@ -7,6 +7,19 @@ import {store} from '../../App.js'
 import './Menulist.css';
 const SubMenu = Menu.SubMenu;
 let fun;
+const MenuAndSubeMenu = (Menu) => (
+	!Menu.menuitem ? <Menu.Item key={Menu.key}><Link to={Menu.link}><Icon type={Menu.type} /><span>{Menu.title}</span></Link></Menu.Item> :
+	<SubMenu
+	  key={Menu.key}
+		title={<span><Icon type={Menu.type} /><span>{Menu.title}</span></span>}
+	>
+{ 
+			Menu.menuitem.map((Menu2,i) => (
+		<Menu.Item key={Menu2.key}><Link to={Menu2.link}><Icon type={Menu2.type} />{Menu2.title}</Link></Menu.Item>
+			))
+		}				
+	</SubMenu>
+)
 class Menulist extends React.Component{
 
  	constructor(props){

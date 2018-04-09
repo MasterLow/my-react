@@ -71,9 +71,7 @@ constructor(props){
   componentDidMount() {
   }  
   componentWillUnmount() {
-    
-
-}
+  }
   render() {
 
     return (

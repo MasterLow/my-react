@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../style/common.css';
 
 class SliderArrows extends React.Component {
   constructor(props) {

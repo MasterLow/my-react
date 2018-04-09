@@ -14,7 +14,7 @@ import './Slider.css';
 //   items: [],
 // };
 // Slider.autoPlayFlag = null;
-class Slider extends React.Component {
+class Slider extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -52,6 +52,9 @@ class Slider extends React.Component {
     componentDidMount() {
       this.goPlay();
     }
+    componentWillUnmount() {
+      clearInterval(this.autoPlayFlag);
+  }
   
     render() {
       let count = this.props.items.length;

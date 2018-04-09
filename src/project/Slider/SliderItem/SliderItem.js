@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../style/common.css';
 
 class SliderItem extends React.Component {
   constructor(props) {
