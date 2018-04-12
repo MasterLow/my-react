@@ -6,9 +6,12 @@ class Homepage3 extends React.Component {
     constructor(props) {
         super(props);
         this.columns = [{
+            title: '序号',
+            dataIndex: 'key',
+            width:'10%'
+        }, {
             title: '姓名',
             dataIndex: 'name',
-            width: '30%'
         }, {
             title: '年龄',
             dataIndex: 'age',
@@ -22,7 +25,7 @@ class Homepage3 extends React.Component {
                 return (
                     this.state.dataSource.length > 0 ?
                         (
-                            <Popconfirm title="Sure to delete?" onConfirm={() => this.onDelete(record, index)}>
+                            <Popconfirm title="确定删除?" onConfirm={() => this.onDelete(record, index)}>
                                 <a style={{color:'#0f8cf0',fontSize:'16px'}}>删除</a>
                             </Popconfirm>
                         ) : null
@@ -31,19 +34,24 @@ class Homepage3 extends React.Component {
         }];
         this.state = {
             dataSource: [{
-                key: '0',
+                key: 0,
                 name: 'XX 0',
                 age: '32',
                 address: '不详 0',
             }, {
-                key: '1',
+                key: 1,
                 name: 'XX 1',
                 age: '32',
                 address: '不详 1',
             }],
             count: 2,
-            deleteIndex: -1
+            deleteIndex: -1,
+            selectedRowKeys: [],  // Check here to configure the default column
         };
+    }
+    onSelectChange = (selectedRowKeys) => {
+      console.log('selectedRowKeys changed: ', selectedRowKeys);
+      this.setState({ selectedRowKeys });
     }
     onDelete = (record, index) => {
         const dataSource = [...this.state.dataSource];
@@ -67,8 +75,12 @@ class Homepage3 extends React.Component {
         });
     };
     render() {
-        const { dataSource } = this.state;
+        const { dataSource,selectedRowKeys  } = this.state;
         const columns = this.columns;
+        const rowSelection = {
+          selectedRowKeys,
+          onChange: this.onSelectChange,
+        };
         return (
             <div>
                 <Row gutter={16}>
@@ -80,6 +92,7 @@ class Homepage3 extends React.Component {
                                     bordered
                                     dataSource={dataSource}
                                     columns={columns}
+                                    rowSelection={rowSelection}
                                     rowClassName={(record, index) => {
                                         if (this.state.deleteIndex === record.key) return 'animated zoomOutLeft min-black';
                                         return 'animated fadeInRight';

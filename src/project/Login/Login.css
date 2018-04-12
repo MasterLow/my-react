@@ -3,71 +3,16 @@ body{
     padding: 0;
     margin: 0;
 }
-.bodyDiv{
-    
-}
-.ADiv{
-    position: absolute;
-    width:100vw;
-    height:100vh;
-    top:0;
-    left:0;
-    background-color: bisque;
-    background-image: url('./../../images/background.jpg');
-    background-size:100%;
-    background-repeat:no-repeat：
-}
-.FormDiv{
-    position: absolute;
-    top:50%;
-    left:50%;
-    margin:-200px 0 0 -200px;
-    width:400px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-}
-.divinput{
-    display:flex;
-    flex-direction:row;
-    margin:10px;
-    border: solid 1px #08c;
-    background-color:#fff;
-}
-.divinput:hover{
-    border: solid 2px #08c;
-}
-.inputDiv{
-    width:250px;
-    height:40px;
-    outline: none;
-    -webkit-appearance: none;
-    border: 0;
-    padding-left: 15px;
-    font-size: 16px;
-    color: #08c;
-}
-.inputDiv::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:  gray;
-    font-size:13px;
-}
-.inputDiv:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:  gray;
-    font-size:13px;
-}
-.inputDiv::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:  gray;
-    font-size:13px;
-}
-.inputDiv:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color:  gray;
-    font-size:13px;
-}
-.leftDiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:40px;
-    height:40px;
-    border-left:solid 1px gray;
-}
+.login-form {
+    min-width: 350px;
+    max-width: 400px;
+  }
+.login-form-forgot {
+    float: right;
+  }
+.login-form-button {
+    width: 100%;
+  }
+.icp-selector {
+    width: 60px;
+  }

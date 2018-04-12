@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
-class SliderDots extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+class SliderDots extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+    }
+    }
 
   handleDotClick(i) {
     var option = i - this.props.nowLocal;
@@ -17,7 +19,7 @@ class SliderDots extends React.Component {
       dotNodes[i] = (
         <span
           key={'dot' + i}
-          className={"slider-dot" + (i === this.props.nowLocal?"slider-dot-selected":"")}
+          className={"slider-dot" + (i === nowLocal?"slider-dot-selected":"")}
           onClick={this.handleDotClick.bind(this, i)}>
         </span>
       );
