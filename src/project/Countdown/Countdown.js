@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import './Countdown.css';
-class Countdown extends Component {
+class Countdown extends React.Component {
     componentWillMount() {
         const {interval} = this.props;
         this.timer = setInterval(this.onEvent, interval);

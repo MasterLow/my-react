@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
-class SliderItem extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+class SliderItem extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+    }
+    }
 
   render() {
     let { count, item } = this.props;
